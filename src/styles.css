@@ -3,43 +3,61 @@
 @media(max-width:780px){.nav{height:65px;padding:0 20px}.menu{display:block}.nav nav{display:none;position:absolute;top:60px;left:14px;right:14px;padding:12px;background:#fff;box-shadow:0 8px 14px oklch(.4 .12 350/.12);transform-origin:top}.nav nav.open{display:flex;flex-direction:column;align-items:stretch;gap:3px;animation:materialize 180ms var(--ease) both}.nav nav>button:not(.nav-book){padding:11px;text-align:left}.nav-book{margin-top:5px}.hero{min-height:auto;grid-template-columns:1fr}.hero-copy{padding:66px 20px 48px}.hero h1,.page-intro h1,.booking-head h1{font-size:52px}.hero-image{min-height:385px;clip-path:none}.hero-image:after{background:linear-gradient(180deg,oklch(.62 .23 355/.3),transparent 25%)}.hero-stamp{bottom:19px;right:20px}.manifesto{padding:72px 20px;grid-template-columns:1fr auto}.manifesto p{font-size:31px}.manifesto span{font-size:70px}.signature-services,.reviews,.closing-cta{padding:70px 20px}.signature-grid{grid-template-columns:1fr 1fr;grid-template-rows:170px 170px 150px;margin-top:36px}.card-1{grid-row:span 2}.card-4{grid-column:span 2}.studio-story{padding:82px 20px;grid-template-columns:1fr;gap:46px}.story-photo{height:380px;width:84%;transform:rotate(-2deg)}.reviews{grid-template-columns:1fr;gap:40px}.review-list blockquote{font-size:22px}.closing-cta{display:block}.closing-cta .button{margin-top:28px}.page,.booking{padding:39px 20px 80px}.page-intro{padding:25px 0 57px}.menu-grid,.contact-grid{grid-template-columns:1fr}.menu-item{padding:19px 0}.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:170px}.gallery img:first-child{grid-row:span 2}.gallery img:nth-child(4){grid-column:auto}.review-score{margin-top:50px;padding:28px;grid-template-columns:1fr;gap:17px}.contact-form{grid-column:auto}.booking-layout{grid-template-columns:1fr;gap:14px}.wizard{padding:27px 16px}.wizard h2{font-size:36px}.summary{position:static;order:-1}.artist-row,.form-grid{grid-template-columns:1fr}.form-grid .full{grid-column:auto}.day-tabs{grid-template-columns:repeat(2,1fr)}.time-grid{grid-template-columns:repeat(2,1fr)}.step-actions{position:sticky;bottom:0;margin:28px -16px -27px;padding:13px 16px;background:oklch(.95 .04 352/.96);backdrop-filter:blur(10px)}.step-actions .button{min-width:174px}.confirmation{padding:58px 20px 88px}.footer{padding:27px 20px;align-items:flex-start;flex-direction:column}.footer .text-button{padding:0}.hero-actions{flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 
-/* The hero is image-led and neutral. Rose stays reserved for the booking action. */
-.hero{background:oklch(.18 .012 350)}
-.hero-image:after{background:linear-gradient(90deg,oklch(.18 .012 350/.58),transparent 34%)}
-.hero .hero-kicker{color:oklch(.8 .015 350)}
-.hero .hero-copy p{color:oklch(.88 .01 350)}
-.hero .light-button{background:var(--pink);color:#fff;box-shadow:0 5px 8px oklch(.62 .23 355/.2)}
-.hero .light-button:hover{background:var(--pink-deep);color:#fff;box-shadow:0 8px 10px oklch(.43 .19 350/.2)}
-.hero .light-text{color:#fff}
-.hero .light-text:hover{color:#fff}
-@media(max-width:780px){.hero-image:after{background:linear-gradient(180deg,oklch(.18 .012 350/.42),transparent 28%)}}
-
-/* Mobile hero: one full-bleed image instead of a stacked two-tone composition. */
-@media(max-width:780px){
-  .hero{display:block;min-height:650px;background:transparent;isolation:isolate}
-  .hero-copy{position:relative;z-index:1;min-height:650px;display:flex;flex-direction:column;justify-content:flex-end;padding:170px 20px 48px}
-  .hero-image{position:absolute;inset:0;z-index:-1;min-height:0;clip-path:none}
-  .hero-image:after{background:linear-gradient(180deg,oklch(.12 .01 350/.15) 0%,oklch(.12 .01 350/.78) 78%,oklch(.12 .01 350/.92) 100%)}
-  .hero-image img{object-position:center}
-  .hero-stamp{z-index:2;top:21px;bottom:auto}
-}
-
-/* Mobile polish: summary below the form, 44px tap targets, no iOS input zoom. */
-@media(max-width:780px){
-  .summary{order:0}
-  .menu{padding:12px 0 12px 12px;min-height:44px}
-  .text-button,.back{min-height:44px;padding:10px 4px}
-  .footer .text-button{padding:10px 0}
-  .small-button{padding:11px 16px;font-size:13px}
-  .wordmark{min-height:44px}
-  input,textarea,.contact-form input,.contact-form textarea,.form-grid input,.form-grid textarea{font-size:16px}
-  .nav nav>button:not(.nav-book){min-height:44px}
-}
-
-/* Hero: single full-bleed image on all sizes, no two-tone split. */
-.hero{display:block;isolation:isolate;background:oklch(.18 .012 350)}
-.hero-copy{position:relative;z-index:1}
+/* ---------- Cleaner layout + mobile ---------- */
+html{-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+.nav{background:var(--white)}
+.hero{display:block;isolation:isolate;min-height:min(680px,88vh);background:oklch(.18 .012 350);color:#fff;overflow:hidden}
+.hero-copy{position:relative;z-index:1;max-width:none;width:100%;padding:clamp(90px,14vw,170px) max(28px,calc((100vw - 1120px)/2)) clamp(70px,9vw,110px)}
+.hero-copy>*{max-width:520px}
+.hero h1{font-size:clamp(44px,6vw,84px)}
+.hero .hero-kicker{color:oklch(.9 .02 350)}
+.hero .hero-copy p{color:oklch(.94 .01 350)}
 .hero-image{position:absolute;inset:0;z-index:-1;min-height:0;clip-path:none}
-.hero-image:after{background:linear-gradient(90deg,oklch(.12 .01 350/.78) 0%,oklch(.12 .01 350/.45) 45%,oklch(.12 .01 350/.08) 100%)}
-.hero-image img{object-position:center 18%}
-@media(max-width:780px){.hero-image:after{background:linear-gradient(180deg,oklch(.12 .01 350/.15) 0%,oklch(.12 .01 350/.78) 78%,oklch(.12 .01 350/.92) 100%)}}
+.hero-image img{width:100%;height:100%;object-fit:cover;object-position:60% center}
+.hero-image:after{background:linear-gradient(90deg,oklch(.12 .01 350/.82) 0%,oklch(.12 .01 350/.5) 45%,oklch(.12 .01 350/.05) 100%)}
+.hero .light-button{background:var(--pink);color:#fff;box-shadow:none}
+.hero .light-button:hover{background:var(--pink-deep);color:#fff}
+.gallery{grid-template-columns:repeat(3,1fr);grid-auto-rows:260px}
+.gallery img:first-child{grid-row:auto}
+.gallery img:nth-child(4){grid-column:auto}
+.gallery img:nth-child(1){grid-column:span 2}
+.story-photo{transform:none}
+.story-photo img{object-position:center}
+@media(max-width:780px){
+  .nav{position:sticky;top:0;height:60px;border-bottom:1px solid var(--line)}
+  .nav nav{top:60px;left:0;right:0;border-top:1px solid var(--line)}
+  .hero{min-height:0;display:flex;flex-direction:column;background:var(--white);color:var(--ink)}
+  .hero-image{position:relative;inset:auto;z-index:0;order:-1;height:300px}
+  .hero-image img{object-position:45% center}
+  .hero-image:after{display:none}
+  .hero-copy{padding:32px 20px 44px}
+  .hero-copy>*{max-width:none}
+  .hero h1{font-size:42px;line-height:1}
+  .hero .hero-kicker{color:var(--pink)}
+  .hero .hero-copy p{color:var(--muted);font-size:16px;margin:16px 0 24px}
+  .hero .hero-actions{flex-direction:column;align-items:stretch;gap:4px}
+  .hero .hero-actions .button{width:100%;padding:16px;font-size:16px;text-align:center}
+  .hero .light-text{color:var(--ink);text-align:center}
+  .hero .light-text:hover{color:var(--pink)}
+  .manifesto{padding:48px 20px;grid-template-columns:1fr}
+  .manifesto span{display:none}
+  .manifesto p{font-size:26px}
+  .signature-services,.reviews,.closing-cta{padding:52px 20px}
+  .signature-grid{grid-template-columns:1fr;grid-template-rows:none;grid-auto-rows:auto;gap:10px}
+  .signature-card,.card-1,.card-4{grid-row:auto;grid-column:auto;min-height:120px}
+  .studio-story{padding:52px 20px;gap:28px}
+  .story-photo{width:100%;height:300px;transform:none}
+  .section-copy h2,.story-copy h2,.reviews h2,.closing-cta h2,.menu-section h2,.contact h2,.wizard h2{font-size:32px}
+  .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:150px}
+  .gallery img:nth-child(1){grid-column:span 2}
+  .menu-item{flex-direction:column;gap:10px}
+  .menu-meta{flex-direction:row;align-items:center;text-align:left;gap:12px;min-width:0}
+  .menu-meta .small-button{margin:0 0 0 auto}
+  .day-tabs{grid-template-columns:repeat(3,1fr)}
+  .time-grid{grid-template-columns:repeat(2,1fr)}
+  .day-tabs button,.time-grid button{min-height:44px}
+  .progress{gap:12px;font-size:11px;flex-wrap:wrap}
+  .footer{gap:12px}
+  .page-intro h1,.booking-head h1{font-size:40px}
+}
