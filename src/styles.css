@@ -13,3 +13,33 @@
 .hero .light-text{color:#fff}
 .hero .light-text:hover{color:#fff}
 @media(max-width:780px){.hero-image:after{background:linear-gradient(180deg,oklch(.18 .012 350/.42),transparent 28%)}}
+
+/* Mobile hero: one full-bleed image instead of a stacked two-tone composition. */
+@media(max-width:780px){
+  .hero{display:block;min-height:650px;background:transparent;isolation:isolate}
+  .hero-copy{position:relative;z-index:1;min-height:650px;display:flex;flex-direction:column;justify-content:flex-end;padding:170px 20px 48px}
+  .hero-image{position:absolute;inset:0;z-index:-1;min-height:0;clip-path:none}
+  .hero-image:after{background:linear-gradient(180deg,oklch(.12 .01 350/.15) 0%,oklch(.12 .01 350/.78) 78%,oklch(.12 .01 350/.92) 100%)}
+  .hero-image img{object-position:center}
+  .hero-stamp{z-index:2;top:21px;bottom:auto}
+}
+
+/* Mobile polish: summary below the form, 44px tap targets, no iOS input zoom. */
+@media(max-width:780px){
+  .summary{order:0}
+  .menu{padding:12px 0 12px 12px;min-height:44px}
+  .text-button,.back{min-height:44px;padding:10px 4px}
+  .footer .text-button{padding:10px 0}
+  .small-button{padding:11px 16px;font-size:13px}
+  .wordmark{min-height:44px}
+  input,textarea,.contact-form input,.contact-form textarea,.form-grid input,.form-grid textarea{font-size:16px}
+  .nav nav>button:not(.nav-book){min-height:44px}
+}
+
+/* Hero: single full-bleed image on all sizes, no two-tone split. */
+.hero{display:block;isolation:isolate;background:oklch(.18 .012 350)}
+.hero-copy{position:relative;z-index:1}
+.hero-image{position:absolute;inset:0;z-index:-1;min-height:0;clip-path:none}
+.hero-image:after{background:linear-gradient(90deg,oklch(.12 .01 350/.78) 0%,oklch(.12 .01 350/.45) 45%,oklch(.12 .01 350/.08) 100%)}
+.hero-image img{object-position:center 18%}
+@media(max-width:780px){.hero-image:after{background:linear-gradient(180deg,oklch(.12 .01 350/.15) 0%,oklch(.12 .01 350/.78) 78%,oklch(.12 .01 350/.92) 100%)}}
